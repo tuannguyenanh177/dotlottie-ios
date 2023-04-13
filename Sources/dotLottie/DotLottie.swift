@@ -11,7 +11,7 @@ import Lottie
 import dotLottieLoader
 
 public typealias LottieFile = DotLottieFile
-public typealias DotLottieResponse = (Animation?, LottieFile?) -> Void
+public typealias DotLottieResponse = (LottieAnimation?, LottieFile?) -> Void
 
 public class DotLottie {
     
@@ -79,7 +79,7 @@ public class DotLottie {
             return
         }
         
-        Animation.loadedFrom(url: url, closure: { (animation) in
+        LottieAnimation.loadedFrom(url: url, closure: { (animation) in
             completion(animation, nil)
         }, animationCache: LRUAnimationCache.sharedCache)
     }
@@ -98,7 +98,7 @@ public class DotLottie {
             return
         }
         
-        Animation.loadedFrom(url: url, closure: { (animation) in
+        LottieAnimation.loadedFrom(url: url, closure: { (animation) in
             completion(animation, lottie)
         }, animationCache: LRUAnimationCache.sharedCache)
     }
