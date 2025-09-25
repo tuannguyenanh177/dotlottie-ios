@@ -6,9 +6,7 @@ import PackageDescription
 let package = Package(
   name: "dotLottie",
   platforms: [
-    .iOS(.v11),
-    .macOS(.v10_12),
-    .tvOS(.v9)
+    .iOS("13.0"), .macOS("10.15"), .tvOS("13.0")
   ],
   products: [
     .library(
